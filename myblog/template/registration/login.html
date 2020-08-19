@@ -10,10 +10,10 @@
     <p>Your username and password didn't match!</p>
     {% endif %}
 
-    <form action="{% url 'login' %}" method="POST">
+    <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
-        {% form.as_p %}
-        <input type='submit' class='btn btn-primary' value='Log In'>
+        {{ form.as_p }}
+        <input type='submit' class='btn btn-primary' value='Login'>
         <input type="hidden" name='next' value='{{next_page}}'>
     </form>
 </div>
