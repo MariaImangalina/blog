@@ -7,7 +7,7 @@ class Post(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField()
-    create_date = models.DateTimeField(default=timezone.now)
+    create_date = models.DateTimeField(default=timezone.now) #не выполняем функцию, а апередаем ее. А то выполнится вот прям щас, а не в момент создания поста
     published_date = models.DateTimeField(blank=True, null=True)
 
 

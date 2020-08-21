@@ -10,7 +10,7 @@
     <a class='btn btn-default'href="{% url 'post_publish' pk=post.pk %}">Publish</a> <!-- если не опубликован, ссылка на страницу публикации -->
     {% endif %}
 
-    <p class='postcontent'>{{ post.title|safe|linebreaksbr }}</p> <!-- тут фильтры из medium-editor, погугли -->
+    <p class='postcontent'>{{ post.text|safe|linebreaksbr }}</p> <!-- тут фильтры из medium-editor, погугли -->
 
     {% if user.is_authenticated %}
         <a class='btn btn-primary' href="{% url 'post_edit' pk=post.pk %}">
